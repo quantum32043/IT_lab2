@@ -12,11 +12,11 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        lfsr = LFSR(25)
+        lfsr = LFSR([0, 3])
         #print(lfsr.file_to_binary("D:/1.txt"))
         data = file_to_binary("D:/1.txt")
-        self.ui.StartConditionEdit.setPlainText("1111111111111111111111111")
-        self.ui.KeyEdit.setPlainText(lfsr.generate_key(self.ui.StartConditionEdit.toPlainText(), len(data)))
+        self.ui.StartConditionEdit.setPlainText("1111")
+        self.ui.KeyEdit.setPlainText(lisxt_to_string(lfsr.generate_key(self.ui.StartConditionEdit.toPlainText(), len(data))))
 
 
 if __name__ == "__main__":
