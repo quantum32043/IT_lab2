@@ -1,4 +1,4 @@
-def file_to_binary(file_name):
+def to_binary(file_name):
     binary_data = []
     with open(file_name, 'rb') as f:
         byte = f.read(1)
@@ -17,6 +17,12 @@ def list_to_string(lst):
     for el in lst:
         string += str(el)
     return string
+
+
+def to_bits(lst):
+    for i in range(len(lst)):
+        lst[i] = int(lst[i])
+    return lst
 
 
 def bits_to_bytes(bits):
