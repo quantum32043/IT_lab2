@@ -4,10 +4,10 @@ class LFSR:
     def __init__(self, polynom_degree):
         self.polynom_degree = polynom_degree
 
-    def generate_key(self, register_value, key_length):
+    def generate_key(self, register_value):
         key = []
         register_value = list(reverse_string(register_value))
-        for i in range(key_length):
+        for i in range(len(register_value)):
             xored_bit = int(register_value[self.polynom_degree[0]]) ^ int(register_value[self.polynom_degree[1]])
             key.append(register_value[-1])
             for j in range(len(register_value) - 1, 0, -1):

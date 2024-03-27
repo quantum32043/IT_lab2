@@ -1,16 +1,29 @@
 def file_to_binary(file_name):
-    data = ""
+    binary_data = []
     with open(file_name, 'rb') as f:
-        data = "".join(format(i, "b") for i in f.read())
-    return list(data)
+        byte = f.read(1)
+        while byte:
+            binary_data += format(int.from_bytes(byte, 'big'), '08b')
+            byte = f.read(1)
+    return binary_data
 
 
 def reverse_string(s):
     return s[::-1]
 
 
-def lisxt_to_string(lst):
+def list_to_string(lst):
     string = ''
     for el in lst:
         string += str(el)
     return string
+
+
+def bits_to_bytes(bits):
+    bytes = bytearray()
+    for i in range(0, len(bits), 8):
+        byte = bits[i:i+8]
+        bytes.append(int(''.join(str(bit) for bit in byte), 2))
+    return bytes
+
+

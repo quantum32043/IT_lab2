@@ -10,7 +10,8 @@
 
 from PySide6.QtCore import QCoreApplication, QMetaObject, QRect
 from PySide6.QtGui import QFont
-from PySide6.QtWidgets import QLabel, QPlainTextEdit, QPushButton, QStatusBar, QWidget
+from PySide6.QtWidgets import QLabel, QPlainTextEdit, QPushButton, QWidget, QLineEdit
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -26,7 +27,7 @@ class Ui_MainWindow(object):
         font.setFamilies([u"Times New Roman"])
         font.setPointSize(14)
         self.StartConditionLabel.setFont(font)
-        self.StartConditionEdit = QPlainTextEdit(self.centralwidget)
+        self.StartConditionEdit = QLineEdit(self.centralwidget)
         self.StartConditionEdit.setObjectName(u"StartConditionEdit")
         self.StartConditionEdit.setGeometry(QRect(30, 55, 300, 30))
         font1 = QFont()
@@ -55,20 +56,27 @@ class Ui_MainWindow(object):
         self.CipherFileLabel.setObjectName(u"CipherFileLabel")
         self.CipherFileLabel.setGeometry(QRect(315, 220, 251, 25))
         self.CipherFileLabel.setFont(font)
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setEnabled(False)
-        self.pushButton.setGeometry(QRect(370, 50, 200, 30))
-        self.pushButton.setFont(font)
-        self.pushButton_2 = QPushButton(self.centralwidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setEnabled(False)
-        self.pushButton_2.setGeometry(QRect(370, 90, 200, 30))
-        self.pushButton_2.setFont(font)
+        self.EncryptButton = QPushButton(self.centralwidget)
+        self.EncryptButton.setObjectName(u"EncryptButton")
+        self.EncryptButton.setEnabled(False)
+        self.EncryptButton.setGeometry(QRect(370, 50, 200, 30))
+        self.EncryptButton.setFont(font)
+        self.DecryptButton = QPushButton(self.centralwidget)
+        self.DecryptButton.setObjectName(u"DecryptButton")
+        self.DecryptButton.setEnabled(False)
+        self.DecryptButton.setGeometry(QRect(370, 90, 200, 30))
+        self.DecryptButton.setFont(font)
+        self.OpenFileButton = QPushButton(self.centralwidget)
+        self.OpenFileButton.setObjectName(u"OpenFileButton")
+        self.OpenFileButton.setEnabled(True)
+        self.OpenFileButton.setGeometry(QRect(370, 130, 110, 25))
+        self.OpenFileButton.setText("Открыть файл...")
+        self.SaveFileButton = QPushButton(self.centralwidget)
+        self.SaveFileButton.setObjectName(u"SaveFileButton")
+        self.SaveFileButton.setEnabled(True)
+        self.SaveFileButton.setGeometry(QRect(370, 165, 110, 25))
+        self.SaveFileButton.setText("Сохранить файл...")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
 
@@ -81,7 +89,7 @@ class Ui_MainWindow(object):
         self.KeyLabel.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0433\u0435\u043d\u0435\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u043a\u043b\u044e\u0447:", None))
         self.PlainFileLabel.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0444\u0430\u0439\u043b:", None))
         self.CipherFileLabel.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0444\u0430\u0439\u043b:", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0441\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.EncryptButton.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.DecryptButton.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0430\u0441\u0448\u0438\u0444\u0440\u043e\u0432\u0430\u0442\u044c", None))
     # retranslateUi
 
