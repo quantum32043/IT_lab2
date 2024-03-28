@@ -1,7 +1,5 @@
 import sys
-import re
 
-from PySide6.QtGui import QIntValidator
 from PySide6.QtWidgets import QMainWindow, QApplication, QFileDialog
 from PySide6.QtCore import QRegularExpression
 from PySide6.QtGui import QRegularExpressionValidator
@@ -55,7 +53,6 @@ class MainWindow(QMainWindow):
         plain_text = self.lfsr.encrypt(self.ui.StartConditionEdit.text(), self.ui.PlainTextEdit.toPlainText())
         self.ui.CipherTextEdit.setPlainText(list_to_string(plain_text))
         self.ui.KeyEdit.setPlainText(list_to_string(self.lfsr.get_key()))
-
 
 
 if __name__ == "__main__":

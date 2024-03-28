@@ -31,5 +31,3 @@ def bits_to_bytes(bits):
         byte = bits[i:i+8]
         bytes.append(int(''.join(str(bit) for bit in byte), 2))
     return bytes
-
-
